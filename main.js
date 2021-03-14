@@ -74,7 +74,7 @@ function winner() {
         (t[0] == 'player' && t[3] == 'player' && t[6] == 'player') ||
         (t[1] == 'player' && t[4] == 'player' && t[7] == 'player') ||
         (t[2] == 'player' && t[5] == 'player' && t[8] == 'player')) {
-       winner = 'You'
+        winner = 'You'
     }
     return winner;
 }
@@ -87,10 +87,10 @@ function move(id, role) {
 
     document.getElementById(id).className = 'cell ' + role;
 
-    !checkEnd() ? (role == 'player') ? zero() : null : reset();
+    !checkEnd() ? (role == 'player') ? zero() : null : setTimeout(function () {reset()},10);
 }
 
 function reset() {
-    alert('Game end! ' + winner() + ' winner!' );
+    alert('Game end! ' + winner() + ' winner!');
     location.reload();
 }
